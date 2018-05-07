@@ -11,17 +11,21 @@
         }
     },
     "scripts": {
+        "package": "cd ../publish && rimraf ./package && ./pack.sh",
+        "demo.ios": "npm run preparedemo && cd ../demo && rimraf platforms/ios && tns run ios",
+        "demo.android": "npm run preparedemo && cd ../demo && rimraf platforms/android && tns run android",
+        "test": "npm run tslint && npm run tslint.demo && cd ../demo && tns build ios && tns build android",
+        "test.ios": "cd ../demo && tns test ios --justlaunch",
+        "test.android": "cd ../demo && tns test android --justlaunch",
+        "preparedemo": "npm run tsc && npm run package && cd ../demo && tns plugin remove nativescript-login-with-amazon && tns plugin add ../publish/package/*.tgz && tns install",
+
         "tsc": "tsc -skipLibCheck",
         "build": "npm i && tsc && npm run build.native",
         "build.native": "node scripts/build-native.js",
         "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && cd ../src && npm run plugin.link",
-        "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
-        "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
         "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
         "plugin.link": "npm link && cd ../demo && npm link nativescript-login-with-amazon && cd ../src",
         "plugin.tscwatch": "npm run tsc -- -w",
-        "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
-        "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
         "demo.reset": "cd ../demo && rimraf platforms",
         "plugin.prepare": "npm run build && cd ../demo && tns plugin remove nativescript-login-with-amazon && tns plugin add ../src",
         "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
@@ -35,8 +39,8 @@
         "iOS"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "Jeff Hutchins",
+        "email": "jeff@nti.io"
     },
     "bugs": {
         "url": "https://github.com/jhutchins/nativescript-login-with-amazon/issues"

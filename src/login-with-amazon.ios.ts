@@ -1,5 +1,12 @@
-import { Common } from './login-with-amazon.common';
+export class LoginWithAmazon {
+  constructor() {
 
-export class LoginWithAmazon extends Common {
+  }
+
+  login(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      reject(new Error('Not implemented'));
+    })
+  }
 
 }

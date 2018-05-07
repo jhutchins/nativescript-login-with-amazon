@@ -3,7 +3,6 @@
 !*.d.ts
 tsconfig.json
 scripts/*
-platforms/android/*
-!platforms/android/include.gradle
-!platforms/android/*.aar
-!platforms/android/*.jar
+platforms/android/libraryproject/
+platforms/android/typings/
+platforms/ios/typings/
