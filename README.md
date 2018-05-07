@@ -1,4 +1,6 @@
-# Your Plugin Name
+# Nativescript Login With Amazon
+
+WIP
 
 Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
 
