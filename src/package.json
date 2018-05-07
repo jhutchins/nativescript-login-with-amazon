@@ -1,6 +1,6 @@
 {
     "name": "nativescript-login-with-amazon",
-    "version": "1.0.0",
+    "version": "0.1.0-beta",
     "description": "Your awesome NativeScript plugin.",
     "main": "login-with-amazon",
     "typings": "index.d.ts",
