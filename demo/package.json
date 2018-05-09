@@ -9,7 +9,7 @@
     }
   },
   "dependencies": {
-    "nativescript-login-with-amazon": "file:../publish/package/nativescript-login-with-amazon-1.0.0.tgz",
+    "nativescript-login-with-amazon": "file:../publish/package/nativescript-login-with-amazon-0.1.0-beta.tgz",
     "nativescript-theme-core": "^1.0.4",
     "nativescript-unit-test-runner": "^0.3.4",
     "tns-core-modules": "^4.0.0"
